@@ -3,6 +3,7 @@ const NUMBER_OF_PLAYERS=1;
 const INITIAL_POSITION=0;
 const WINNING_POSTION=100;
 let position1=0
+let number_of_die_roll=0
 class SnakesAndLadder{
     getroll=()=>{
         let roll=Math.ceil(Math.random()*10%6)
@@ -12,6 +13,7 @@ class SnakesAndLadder{
     checkOption=()=>{
         console.log("select option of play raandomly")
         while(position1!=WINNING_POSTION){
+            number_of_die_roll++
             let roll=this.getroll()
             let option=Math.ceil(Math.random()*10%3)
         switch(option){
@@ -45,6 +47,7 @@ class SnakesAndLadder{
             }
                   
         }
+        console.log( "Number of die rolls are ",number_of_die_roll)
      }
 }
 module.exports=new SnakesAndLadder();
